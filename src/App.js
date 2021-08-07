@@ -1,18 +1,18 @@
 import './App.css';
-import Card from './components/Card'
-import Header from './components/Header'
+import Header from './components/Header';
 import Nav from './components/Nav';
+import { TasksList } from './features/Tasks/TasksList';
 
-function App() {
+export default function App(props) {
+
   return (
     <div className="app">
       <Header />
       <div className="app__container">
         <Nav />
-        <Card />
+        <TasksList tasks={props.tasks} /> 
       </div>
     </div>
   );
 }
 
-export default App;
