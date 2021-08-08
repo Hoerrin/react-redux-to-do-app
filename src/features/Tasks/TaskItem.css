@@ -2,8 +2,8 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 50vw;
-    height: 20vh;
+    width: 200px;
+    height: 200px;
     padding: 20px;
     margin: 50px;
     border-radius: 25px;

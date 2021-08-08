@@ -14,7 +14,10 @@ export const tasksListSlice = createSlice({
     ],
     reducers: {
         addTask: (state) => {
-            state += 1
+            state.push({
+                title: "test",
+                description: "test"
+            })
         },
         removeTask: (state, action) => {
             state += action.payload
