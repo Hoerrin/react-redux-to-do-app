@@ -5,18 +5,24 @@ export const tasksListSlice = createSlice({
     initialState: [
         {
             title: "title",
-            description: "description"
+            description: "description",
+            tag: "Work",
+            tagColor: "#f00"
         },
         {
             title: "title2",
-            description: "description"
+            description: "description",
+            tag: "Work",
+            tagColor: "#f00"
         }
     ],
     reducers: {
         addTask: (state) => {
             state.push({
                 title: "test",
-                description: "test"
+                description: "test",
+                tag: "test",
+                tagColor: "#0f0"
             })
         },
         removeTask: (state, action) => {
