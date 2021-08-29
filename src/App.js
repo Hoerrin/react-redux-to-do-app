@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header';
+import Main from './components/Main';
 import Nav from './components/Nav';
-import { TasksList } from './features/Tasks/TasksList';
 
 export default function App(props) {
 
@@ -10,7 +10,8 @@ export default function App(props) {
       <Header />
       <div className="app__container">
         <Nav />
-        <TasksList tasks={props.tasks} /> 
+        <Main props={props}/>
+        
       </div>
     </div>
   );
