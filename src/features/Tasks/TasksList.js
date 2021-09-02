@@ -2,6 +2,7 @@ import * as React from "react";
 import { TaskItem } from "./TaskItem";
 import { useDispatch, useSelector } from 'react-redux'
 import { addTask } from "./tasksListSlice";
+import './TasksList.css'
 
 
 export function TasksList() {
@@ -20,7 +21,7 @@ export function TasksList() {
     return (
         <>
             <button onClick={() => dispatch(addTask())}>Create task</button>
-            <ul className="">
+            <ul className="tasksList">
                 {tasks.map(taskToTaskItem)}
             </ul>
         </>

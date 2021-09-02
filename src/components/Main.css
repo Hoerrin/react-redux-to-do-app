@@ -1,8 +1,15 @@
 .main{
     display: flex;
     flex-flow: column;
-    flex-wrap: wrap;
     background-color: #F0F0F0;
     width: 100%;
     overflow-y: scroll;
+    padding: 25px;
+}
+
+.main__header{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
 }
