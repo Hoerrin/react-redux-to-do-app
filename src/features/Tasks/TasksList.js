@@ -11,18 +11,19 @@ export function TasksList() {
     const taskToTaskItem = task => {
         const title = task.title;
         const description = task.description;
+        const completed = task.completed
         const tag = task.tag;
         const tagColor = task.tagColor
-        return <TaskItem title={title} description={description} tag={tag} tagColor={tagColor}/>
+        return <TaskItem title={title} description={description} completed={completed} tag={tag} tagColor={tagColor}/>
     };
 
     return (
-        <div>
+        <>
             <button onClick={() => dispatch(addTask())}>Create task</button>
             <ul className="">
                 {tasks.map(taskToTaskItem)}
             </ul>
-        </div>
+        </>
 
     );
 }

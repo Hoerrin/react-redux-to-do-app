@@ -1,4 +1,7 @@
 .main{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
     background-color: #F0F0F0;
     width: 100%;
     overflow-y: scroll;

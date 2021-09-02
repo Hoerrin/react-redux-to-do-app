@@ -6,12 +6,14 @@ export const tasksListSlice = createSlice({
         {
             title: "title",
             description: "description",
+            completed: false,
             tag: "Work",
             tagColor: "#f00"
         },
         {
             title: "title2",
             description: "description",
+            completed: false,
             tag: "Work",
             tagColor: "#f00"
         }
@@ -21,6 +23,7 @@ export const tasksListSlice = createSlice({
             state.push({
                 title: "test",
                 description: "test",
+                completed: false,
                 tag: "test",
                 tagColor: "#0f0"
             })
