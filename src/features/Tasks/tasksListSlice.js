@@ -15,7 +15,7 @@ export const tasksListSlice = createSlice({
             title: "title2",
             description: "description",
             itemKey: "test255",
-            completed: false,
+            completed: true,
             tag: "Work",
             tagColor: "#f00"
         }
@@ -35,10 +35,14 @@ export const tasksListSlice = createSlice({
             const index = state.findIndex(item => item.itemKey === action.payload)
             state.splice(index,1)
         },
+        clickTaskCheckbox: (state, action) => {        
+            const index = state.findIndex(item => item.itemKey === action.payload)
+            state[index].completed = !state[index].completed 
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { addTask, removeTask } = tasksListSlice.actions
+export const { addTask, removeTask, clickTaskCheckbox} = tasksListSlice.actions
 
 export default tasksListSlice.reducer

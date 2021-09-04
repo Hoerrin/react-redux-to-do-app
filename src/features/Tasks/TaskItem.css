@@ -14,9 +14,9 @@
     padding-right: 20px;
 }
 
-.card__checkbox--button{
-    width: 40px;
-    height: 40px;
+.card__checkbox--input{
+    width: 2em;
+    height: 2em;
     border-radius: 50%
 }
 
