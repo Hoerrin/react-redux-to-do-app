@@ -9,7 +9,7 @@ export const TaskItem = ({ title, description, itemKey, completed, tag, tagColor
   return (
     <li className="card">
       <div className="card__checkbox">
-        <input onClick={() => dispatch(clickTaskCheckbox(itemKey))} type="checkbox" className="card__checkbox--input" checked={completed} style={{ border: `2px ${tagColor} solid` }}/>
+        <input onChange={() => dispatch(clickTaskCheckbox(itemKey))} type="checkbox" className="card__checkbox--input" checked={completed} style={{ border: `2px ${tagColor} solid` }}/>
       </div>
       <div className="card__content">
         <h1 className="card__content--title">{title}</h1>
