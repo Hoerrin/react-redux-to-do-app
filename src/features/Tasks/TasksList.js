@@ -12,10 +12,11 @@ export function TasksList() {
     const taskToTaskItem = task => {
         const title = task.title;
         const description = task.description;
-        const completed = task.completed
+        const id = task.id;
+        const completed = task.completed;
         const tag = task.tag;
-        const tagColor = task.tagColor
-        return <TaskItem title={title} description={description} completed={completed} tag={tag} tagColor={tagColor}/>
+        const tagColor = task.tagColor;
+        return <TaskItem title={title} description={description} id={id} completed={completed} tag={tag} tagColor={tagColor}/>
     };
 
     return (

@@ -1,10 +1,13 @@
 import * as React from "react";
+import { useDispatch } from "react-redux";
+import { removeTask } from "./tasksListSlice";
 import './TaskItem.css'
 
-export const TaskItem = ({ title, description, tag, tagColor }) => {
-
+export const TaskItem = ({ title, description, id, completed, tag, tagColor }) => {
+  const dispatch = useDispatch()
+  
   return (
-    <li className="card" key={title}>
+    <li className="card" >
       <div className="card__checkbox">
         <div className="card__checkbox--button" style={{ border: `2px ${tagColor} solid` }}></div>
       </div>
@@ -21,7 +24,8 @@ export const TaskItem = ({ title, description, tag, tagColor }) => {
           <button className="card__controls--edit">
             EDIT
           </button>
-          <button className="card__controls--delete">
+          
+          <button onClick={() => dispatch(removeTask(id))} className="card__controls--delete">
             DELETE
           </button>
         </div>
