@@ -8,16 +8,20 @@ export const tasksListSlice = createSlice({
             description: "description",
             itemKey: "test256",
             completed: false,
-            tag: "Work",
-            tagColor: "#f00"
+            tag: {
+                name: "tag",
+                color: "#f00"
+            }
         },
         {
             title: "title2",
             description: "description",
             itemKey: "test255",
             completed: true,
-            tag: "Work",
-            tagColor: "#f00"
+            tag: {
+                name: "tag",
+                color: "#f00"
+            }
         }
     ],
     reducers: {
@@ -27,8 +31,10 @@ export const tasksListSlice = createSlice({
                 description: "test",
                 itemKey: "test" + Math.floor(Math.random() * 1000),
                 completed: false,
-                tag: "test",
-                tagColor: "#0f0"
+                tag: {
+                    name: "testTag",
+                    color: "#0f0"
+                }
             })
         },
         removeTask: (state, action) => {        

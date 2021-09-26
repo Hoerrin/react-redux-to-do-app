@@ -1,0 +1,48 @@
+.card{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    height: 150px;
+    padding: 20px;
+    margin: 25px;
+    border-radius: 25px;
+}
+
+.card__checkbox{
+    padding-right: 20px;
+}
+
+.card__checkbox--input{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%
+}
+
+.card__content{
+    height: 100%;
+    width: 100%;
+}
+
+.card__controls{
+    width: 7em;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__controls--tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag__circle{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 5px;
+}

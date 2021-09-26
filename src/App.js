@@ -11,7 +11,6 @@ export default function App(props) {
       <div className="app__container">
         <Nav />
         <Main props={props}/>
-        
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { TagsList } from '../features/Tasks/TagsList'
 import './Nav.css'
 
 function Nav() {
@@ -19,12 +20,7 @@ function Nav() {
                 </div>
             </div>  
             <div className="nav__bottom">
-                <div className="nav__tag">
-                    <h3 className="nav__h3">Work</h3><p>6</p>
-                </div>
-                <div className="nav__tag">
-                    <h3 className="nav__h3">School</h3><p>3</p>
-                </div>
+                <TagsList/>
             </div>
         </div>
     )
