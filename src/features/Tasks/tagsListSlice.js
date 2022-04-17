@@ -1,22 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const tagsListSlice = createSlice({
-    name: 'tasksList',
+    name: 'tagsList',
     initialState: [
         {
+            itemKey: "tag1",
             name: "tag1",
             color: "#f00"
         },
         {
+            itemKey: "tag2",
             name: "tag2",
             color: "#f0f"
         }
     ],
     reducers: {
-        addTag: (state) => {
+        addTag: (state, action) => {
+            console.log(action.payload)
             state.push({
-                name: "testTag",
-                color: "#000"
+                itemKey: action.payload.name,
+                name: action.payload.name,
+                color: action.payload.color
             })
         },
         removeTag: (state, action) => {        

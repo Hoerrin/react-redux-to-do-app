@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { TagItem } from "./TagItem";
 import { useDispatch, useSelector } from 'react-redux'
 import { addTag } from "./tagsListSlice";
@@ -8,18 +8,42 @@ import './TagsList.css'
 export function TagsList() {
     const tags = useSelector((state) => state.tagsList)
     const dispatch = useDispatch()
-    
-    const tagToTaskItem = task => {
-        const name = task.name;
-        const color = task.color;
-        return <TagItem name={name} color={color}/>
+
+    const [nameInput, setNameInput] = useState(0);
+    const [colorInput, setColorInput] = useState(0);
+
+    const colors = ['red', 'orange', 'brown']
+
+    const tagToTagItem = tag => {
+        const itemKey = tag.itemKey;
+        const name = tag.name;
+        const color = tag.color;
+        return <TagItem key={name} name={name} color={color} itemKey={itemKey} />
     };
+
+    const handleAddTag = () => {
+        let nameAndColor = {
+            name: nameInput, 
+            color: colorInput
+        }
+        if(nameInput && colorInput && !tags.some((item) => {return item.name === nameInput})){
+            dispatch(addTag(nameAndColor))
+        }
+    }
+
+    const availableColors = color => {
+        return <option key={color} style={{ backgroundColor: `${color}` }}>{color}</option>
+    }
 
     return (
         <>
-            <button onClick={() => dispatch(addTag())}>Add tag</button>
-            <ul className="tagList">
-                {tags.map(tagToTaskItem)}
+            <button onClick={handleAddTag}>Add tag</button>
+            <input type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
+            <select name="" id="" value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
+                {colors.map(availableColors)}
+            </select>
+            <ul className="tagsList">
+                {tags.map(tagToTagItem)}
             </ul>
         </>
 

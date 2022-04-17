@@ -6,7 +6,7 @@ export const tasksListSlice = createSlice({
         {
             title: "title",
             description: "description",
-            itemKey: "test256",
+            itemKey: "test25356",
             completed: false,
             tag: {
                 name: "tag",
@@ -16,7 +16,7 @@ export const tasksListSlice = createSlice({
         {
             title: "title2",
             description: "description",
-            itemKey: "test255",
+            itemKey: "test25125",
             completed: true,
             tag: {
                 name: "tag",
@@ -29,7 +29,7 @@ export const tasksListSlice = createSlice({
             state.push({
                 title: "test",
                 description: "test",
-                itemKey: "test" + Math.floor(Math.random() * 1000),
+                itemKey: "test" + Math.floor(Math.random() * 100000),
                 completed: false,
                 tag: {
                     name: "testTag",

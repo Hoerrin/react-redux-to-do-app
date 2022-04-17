@@ -1,5 +1,5 @@
-.tasksList{
+.tagsList{
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    flex-flow: column;
+    list-style: none;
 }
