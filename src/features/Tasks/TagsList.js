@@ -15,10 +15,9 @@ export function TagsList() {
     const colors = ['red', 'orange', 'brown']
 
     const tagToTagItem = tag => {
-        const itemKey = tag.itemKey;
         const name = tag.name;
         const color = tag.color;
-        return <TagItem key={name} name={name} color={color} itemKey={itemKey} />
+        return <TagItem key={name} name={name} color={color} />
     };
 
     const handleAddTag = () => {

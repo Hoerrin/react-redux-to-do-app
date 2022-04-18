@@ -6,7 +6,7 @@ export const tasksListSlice = createSlice({
         {
             title: "title",
             description: "description",
-            itemKey: "test25356",
+            taskKey: "test25356",
             completed: false,
             tag: {
                 name: "tag",
@@ -16,11 +16,11 @@ export const tasksListSlice = createSlice({
         {
             title: "title2",
             description: "description",
-            itemKey: "test25125",
+            taskKey: "test25125",
             completed: true,
             tag: {
-                name: "tag",
-                color: "#f00"
+                //name: "tag",
+                //color: "#f00"
             }
         }
     ],
@@ -29,26 +29,31 @@ export const tasksListSlice = createSlice({
             state.push({
                 title: "test",
                 description: "test",
-                itemKey: "test" + Math.floor(Math.random() * 100000),
+                taskKey: "test" + Math.floor(Math.random() * 100000),
                 completed: false,
                 tag: {
-                    name: "testTag",
-                    color: "#0f0"
+                    //name: "testTag",
+                    //color: "#0f0"
                 }
             })
         },
+        addTagToTask: (state, action) => {        
+            const index = state.findIndex(item => item.taskKey === action.payload.itemIndex)
+            state[index].tag = action.payload.tag
+            
+        },
         removeTask: (state, action) => {        
-            const index = state.findIndex(item => item.itemKey === action.payload)
+            const index = state.findIndex(item => item.taskKey === action.payload)
             state.splice(index,1)
         },
         clickTaskCheckbox: (state, action) => {        
-            const index = state.findIndex(item => item.itemKey === action.payload)
+            const index = state.findIndex(item => item.taskKey === action.payload)
             state[index].completed = !state[index].completed 
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { addTask, removeTask, clickTaskCheckbox} = tasksListSlice.actions
+export const { addTask, addTagToTask, removeTask, clickTaskCheckbox} = tasksListSlice.actions
 
 export default tasksListSlice.reducer

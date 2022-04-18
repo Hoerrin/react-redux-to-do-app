@@ -3,6 +3,7 @@
     display: grid;
     grid-template-rows: 35% 65%;
     width: 20vw;
+    min-width: 250px;
     background-color: #fff;
     padding: 50px;
 }
@@ -15,7 +16,7 @@
 
 .nav__item{
     font-weight: normal;
-    margin-right: 10px;
+    margin-right: 5px;
     
 }
 
