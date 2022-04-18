@@ -5,7 +5,7 @@ import { addTask } from "./tasksListSlice";
 import './TasksList.css'
 
 
-export function TasksList() {
+export function TasksList(props) {
     const tasks = useSelector((state) => state.tasksList)
     const dispatch = useDispatch()
     
@@ -16,7 +16,15 @@ export function TasksList() {
         const completed = task.completed;
         const tag = task.tag.name;
         const tagColor = task.tag.color;
-        return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+        if(props.showCompletedChkbx){
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+        }else{
+            if(!completed){
+                return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+            }else{
+                return
+            }
+        }
     };
 
     return (
