@@ -10,13 +10,13 @@ function Nav() {
         <div className="nav">
             <div className="nav__top">
                 <div className="nav__tab">
-                    <h3 className="nav__h3">Today</h3><p>{tasks.length}</p>
+                    <h3 className="nav__item nav__item--selected">Today</h3><p className="nav__itemNumber">{tasks.length}</p>
                 </div>
                 <div className="nav__tab">
-                    <h3 className="nav__h3">Next 7 days</h3><p>2</p>
+                    <h3 className="nav__item">Next 7 days</h3><p className="nav__itemNumber">{tasks.length}</p>
                 </div>
                 <div className="nav__tab">
-                    <h3 className="nav__h3">Bin</h3><p>6</p>
+                    <h3 className="nav__item">Bin</h3><p className="nav__itemNumber">6</p>
                 </div>
             </div>  
             <div className="nav__bottom">

@@ -17,8 +17,8 @@ export const TaskItem = ({ title, description, itemKey, completed, tag, tagColor
       </div>
       <div className="card__controls">
         <div className="card__controls--tag">
-          <div className="tag__circle" style={{ backgroundColor: `${tagColor}` }}></div>
-          <h5 className="tag__name">{tag}</h5>
+          <div className="tag__circle" style={{ backgroundColor: `${tag? tagColor : 'gray'}` }}></div>
+          <h5 className="tag__name">{tag ? tag : 'no tag'}</h5>
         </div>
         <div className="card__controls--buttons">
           <button className="card__controls--edit">

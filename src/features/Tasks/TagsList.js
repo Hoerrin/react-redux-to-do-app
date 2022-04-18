@@ -10,7 +10,7 @@ export function TagsList() {
     const dispatch = useDispatch()
 
     const [nameInput, setNameInput] = useState(0);
-    const [colorInput, setColorInput] = useState(0);
+    const [colorInput, setColorInput] = useState('red');
 
     const colors = ['red', 'orange', 'brown']
 

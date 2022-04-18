@@ -13,8 +13,16 @@
     margin-bottom: 20px;
 }
 
-.nav__tag{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.nav__item{
+    font-weight: normal;
+    margin-right: 10px;
+    
+}
+
+.nav__item--selected{
+    font-weight: bold;
+}
+
+.nav__itemNumber{
+    font-weight: lighter;
 }
