@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { TagsList } from '../features/Tasks/TagsList'
+import { TagsList } from './TagsList'
 import './Nav.css'
 
 function Nav() {

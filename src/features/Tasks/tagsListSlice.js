@@ -16,7 +16,6 @@ export const tagsListSlice = createSlice({
     ],
     reducers: {
         addTag: (state, action) => {
-            console.log(action.payload)
             state.push({
                 itemKey: action.payload.name,
                 name: action.payload.name,

@@ -7,7 +7,7 @@ import './TagItem.css'
 export const TagItem = ({ name, color}) => {
   //const dispatch = useDispatch()
   const tasks = useSelector((state) => state.tasksList)
-  const filteredTasks = tasks.filter(task => task.tag.name === name)
+  const filteredTasks = tasks.filter(task => task.tag.name === name && !task.completed)
   
   return (
     <li className="tagItem">

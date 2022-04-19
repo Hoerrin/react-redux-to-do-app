@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TagItem } from "./TagItem";
 import { useDispatch, useSelector } from 'react-redux'
-import { addTag } from "./tagsListSlice";
+import { addTag } from "../features/Tasks/tagsListSlice";
 import './TagsList.css'
 
 

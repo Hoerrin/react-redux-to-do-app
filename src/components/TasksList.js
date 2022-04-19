@@ -1,12 +1,13 @@
 import * as React from "react";
 import { TaskItem } from "./TaskItem";
 import { useDispatch, useSelector } from 'react-redux'
-import { addTask } from "./tasksListSlice";
+import { addTask } from "../features/Tasks/tasksListSlice";
 import './TasksList.css'
 
 
-export function TasksList(props) {
+export function TasksList() {
     const tasks = useSelector((state) => state.tasksList)
+    const filter = useSelector((state) => state.filterTasks)
     const dispatch = useDispatch()
     
     const taskToTaskItem = task => {
@@ -16,15 +17,17 @@ export function TasksList(props) {
         const completed = task.completed;
         const tag = task.tag.name;
         const tagColor = task.tag.color;
-        if(props.showCompletedChkbx){
+
+        if(filter.showCompleted){
             return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
-        }else{
-            if(!completed){
-                return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
-            }else{
-                return
-            }
         }
+
+        if(!completed){
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+        }
+
+        return
+        
     };
 
     return (

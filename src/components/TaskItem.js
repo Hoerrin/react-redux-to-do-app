@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDispatch } from "react-redux";
-import { removeTask, clickTaskCheckbox, addTagToTask } from "./tasksListSlice";
+import { removeTask, clickTaskCheckbox, addTagToTask } from "../features/Tasks/tasksListSlice";
 import './TaskItem.css'
 
 
