@@ -15,8 +15,8 @@ export function TagsList() {
     const colors = ['red', 'orange', 'brown']
 
     const tagToTagItem = tag => {
-        const name = tag.name;
-        const color = tag.color;
+        const {name,color} = tag;
+        
         return <TagItem key={name} name={name} color={color} />
     };
 
@@ -25,9 +25,13 @@ export function TagsList() {
             name: nameInput, 
             color: colorInput
         }
-        if(nameInput && colorInput && !tags.some((item) => {return item.name === nameInput})){
-            dispatch(addTag(nameAndColor))
+
+        if(tags.some((item) => item.name === nameInput)){
+            console.log("This tag already exists!")
+            return
         }
+        
+        dispatch(addTag(nameAndColor))
     }
 
     const availableColors = color => {

@@ -1,20 +1,28 @@
 import * as React from "react";
 import { useDispatch } from "react-redux";
 import { removeTask, clickTaskCheckbox, addTagToTask } from "../features/Tasks/tasksListSlice";
+import { addTag } from "../features/Tasks/tagsListSlice"
 import './TaskItem.css'
 
 
 export const TaskItem = ({ title, description, taskKey, completed, tag, tagColor }) => {
   const dispatch = useDispatch()
   
-  const handleAddTag = () => {
+  const handleAddTag = (tagName, tagColor) => {
     dispatch(addTagToTask({
       itemIndex: taskKey, 
       tag: {
-        name: "tag2",
-        color: "#f0f"
+        name: tagName,
+        color: tagColor
       }
     }))
+
+    let nameAndColor = {
+      name: tagName, 
+      color: tagColor
+    }
+
+    dispatch(addTag(nameAndColor))
   }
   
   return (
@@ -28,7 +36,7 @@ export const TaskItem = ({ title, description, taskKey, completed, tag, tagColor
       </div>
       <div className="card__controls">
         <div className="card__controls--tag">
-          <div className="tag__circle" onClick={handleAddTag} style={{ backgroundColor: `${tag? tagColor : 'gray'}` }}></div>
+          <div className="tag__circle" onClick={() => handleAddTag("tagTestowy", "blue")} style={{ backgroundColor: `${tag? tagColor : 'gray'}` }}></div>
           <h5 className="tag__name">{tag ? tag : 'no tag'}</h5>
         </div>
         <div className="card__controls--buttons">

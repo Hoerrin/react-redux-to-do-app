@@ -11,10 +11,8 @@ export function TasksList() {
     const dispatch = useDispatch()
     
     const taskToTaskItem = task => {
-        const title = task.title;
-        const description = task.description;
-        const taskKey = task.taskKey;
-        const completed = task.completed;
+        const {title, description, taskKey, completed} = task;
+
         const tag = task.tag.name;
         const tagColor = task.tag.color;
 
