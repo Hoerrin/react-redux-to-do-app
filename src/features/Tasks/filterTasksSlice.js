@@ -9,15 +9,15 @@ export const filterTasks = createSlice({
     },
     reducers: {
         changeFilter: (state, action) => {
-            
+
         },
-        changeShowCompleted: (state) => {        
-            state.showCompleted  = !state.showCompleted
+        changeShowCompleted: (state) => {
+            state.showCompleted = !state.showCompleted
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { changeFilter, changeShowCompleted} = filterTasks.actions
+export const { changeFilter, changeShowCompleted } = filterTasks.actions
 
 export default filterTasks.reducer

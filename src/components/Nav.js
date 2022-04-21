@@ -4,8 +4,9 @@ import { TagsList } from './TagsList'
 import './Nav.css'
 
 function Nav() {
-    const tasks = useSelector((state) => state.tasksList)
-    
+    //Only tasks marked as completed
+    const tasks = useSelector((state) => state.tasksList.filter(task => !task.completed))
+
     return (
         <div className="nav">
             <div className="nav__top">
@@ -18,9 +19,9 @@ function Nav() {
                 <div className="nav__tab">
                     <h3 className="nav__item">Bin</h3><p className="nav__itemNumber">6</p>
                 </div>
-            </div>  
+            </div>
             <div className="nav__bottom">
-                <TagsList/>
+                <TagsList />
             </div>
         </div>
     )

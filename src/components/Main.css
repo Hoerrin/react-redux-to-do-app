@@ -1,4 +1,4 @@
-.main{
+.main {
     display: flex;
     flex-flow: column;
     background-color: #F0F0F0;
@@ -7,7 +7,7 @@
     padding: 25px;
 }
 
-.main__header{
+.main__header {
     display: flex;
     padding: 30px;
     justify-content: space-between;

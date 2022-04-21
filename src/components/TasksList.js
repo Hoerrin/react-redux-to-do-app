@@ -6,26 +6,31 @@ import './TasksList.css'
 
 
 export function TasksList() {
+    //Every task
     const tasks = useSelector((state) => state.tasksList)
+    //Selected filters for viewing tasks
     const filter = useSelector((state) => state.filterTasks)
     const dispatch = useDispatch()
-    
+
+    //Create new task component for each task in state
     const taskToTaskItem = task => {
-        const {title, description, taskKey, completed} = task;
+        const { title, description, taskKey, completed } = task;
 
-        const tag = task.tag.name;
-        const tagColor = task.tag.color;
+        //Tag name and color 
+        const {tagName, tagColor} = task.tag;
 
-        if(filter.showCompleted){
-            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+        //Show every task including completed if showCompleted filter is active
+        if (filter.showCompleted) {
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tagName={tagName} tagColor={tagColor} />
         }
 
-        if(!completed){
-            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tag={tag} tagColor={tagColor}/>
+        //If showCompleted filter isn't active show only completed tasks
+        if (!completed) {
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tagName={tagName} tagColor={tagColor} />
         }
 
         return
-        
+
     };
 
     return (

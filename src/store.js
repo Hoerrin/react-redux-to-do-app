@@ -4,9 +4,9 @@ import tagsListReducer from './features/Tasks/tagsListSlice'
 import filterTasksReducer from './features/Tasks/filterTasksSlice'
 
 export default configureStore({
-    reducer: {
-        tasksList: tasksListReducer,
-        tagsList: tagsListReducer,
-        filterTasks: filterTasksReducer
-      },
+  reducer: {
+    tasksList: tasksListReducer,
+    tagsList: tagsListReducer,
+    filterTasks: filterTasksReducer
+  },
 })

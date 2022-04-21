@@ -5,43 +5,43 @@ export const tagsListSlice = createSlice({
     initialState: [
         {
             itemKey: "tag1",
-            name: "tag1",
-            color: "#f00"
+            tagName: "tag1",
+            tagColor: "#f00"
         },
         {
             itemKey: "tag2",
-            name: "tag2",
-            color: "#f0f"
+            tagName: "tag2",
+            tagColor: "#f0f"
         }
     ],
     reducers: {
         addTag: (state, action) => {
-            if(!action.payload.name) {
+            if (!action.payload.tagName) {
                 console.log("Please provide tag name!")
                 return
             }
 
-            if(state.some((item) => item.name === action.payload.name)){
+            if (state.some((item) => item.tagName === action.payload.tagName)) {
                 return
             }
 
-            if(action.payload.color){
+            if (action.payload.tagColor) {
                 state.push({
-                    itemKey: action.payload.name,
-                    name: action.payload.name,
-                    color: action.payload.color
+                    itemKey: action.payload.tagName,
+                    tagName: action.payload.tagName,
+                    tagColor: action.payload.tagColor
                 })
             }
         },
-        removeTag: (state, action) => {        
+        removeTag: (state, action) => {
             const index = state.findIndex(item => item.itemKey === action.payload)
-            state.splice(index,1)
+            state.splice(index, 1)
         }
     },
 })
 
 
 // Action creators are generated for each case reducer function
-export const { addTag, removeTag} = tagsListSlice.actions
+export const { addTag, removeTag } = tagsListSlice.actions
 
 export default tagsListSlice.reducer

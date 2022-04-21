@@ -1,6 +1,5 @@
-.tagsList{
+.tagsList {
     display: flex;
     flex-flow: column;
     list-style: none;
 }
-

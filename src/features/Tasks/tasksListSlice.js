@@ -9,8 +9,8 @@ export const tasksListSlice = createSlice({
             taskKey: "test25356",
             completed: false,
             tag: {
-                name: "tag",
-                color: "#f00"
+                //tagName: "tag",
+                //tagColor: "#f00"
             }
         },
         {
@@ -19,8 +19,8 @@ export const tasksListSlice = createSlice({
             taskKey: "test25125",
             completed: true,
             tag: {
-                //name: "tag",
-                //color: "#f00"
+                //tagName: "tag",
+                //tagColor: "#f00"
             }
         }
     ],
@@ -32,28 +32,31 @@ export const tasksListSlice = createSlice({
                 taskKey: "test" + Math.floor(Math.random() * 100000),
                 completed: false,
                 tag: {
-                    //name: "testTag",
-                    //color: "#0f0"
+                    //tagName: "testTag",
+                    //tagColor: "#0f0"
                 }
             })
         },
-        addTagToTask: (state, action) => {        
-            const index = state.findIndex(item => item.taskKey === action.payload.itemIndex)
+        addTagToTask: (state, action) => {
+            const index = state.findIndex(item => item.taskKey === action.payload.taskKey)
             state[index].tag = action.payload.tag
-            
         },
-        removeTask: (state, action) => {        
+        removeTagFromTask: (state, action) => {
             const index = state.findIndex(item => item.taskKey === action.payload)
-            state.splice(index,1)
+            state[index].tag = {}
         },
-        clickTaskCheckbox: (state, action) => {        
+        removeTask: (state, action) => {
             const index = state.findIndex(item => item.taskKey === action.payload)
-            state[index].completed = !state[index].completed 
+            state.splice(index, 1)
+        },
+        clickTaskCheckbox: (state, action) => {
+            const index = state.findIndex(item => item.taskKey === action.payload)
+            state[index].completed = !state[index].completed
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { addTask, addTagToTask, removeTask, clickTaskCheckbox} = tasksListSlice.actions
+export const { addTask, addTagToTask, removeTagFromTask, removeTask, clickTaskCheckbox } = tasksListSlice.actions
 
 export default tasksListSlice.reducer

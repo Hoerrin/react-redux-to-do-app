@@ -1,4 +1,4 @@
-.app{
+.app {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -7,7 +7,7 @@
   width: 100vw;
 }
 
-.app__container{
+.app__container {
   display: flex;
   height: 100%;
   width: 100%;

@@ -9,14 +9,14 @@ function Main() {
     const dispatch = useDispatch()
     const filter = useSelector((state) => state.filterTasks)
 
-    
+
     return (
         <div className="main">
             <div className="main__header">
                 <h1>Today</h1>
                 <label><input type="checkbox" checked={filter.showCompleted} onChange={() => dispatch(changeShowCompleted())}></input>Show completed</label>
             </div>
-            <TasksList/>
+            <TasksList />
         </div>
     )
 }

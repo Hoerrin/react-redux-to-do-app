@@ -1,16 +1,16 @@
-.tagItem{
+.tagItem {
     display: flex;
     align-items: center;
 }
 
-.tagItem__circle{
+.tagItem__circle {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     margin: 5px;
 }
 
-.tagItem___tasksNumber{
+.tagItem___tasksNumber {
     font-weight: 600;
     margin-left: 10px
 }

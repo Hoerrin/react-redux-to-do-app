@@ -9,32 +9,43 @@ export function TagsList() {
     const tags = useSelector((state) => state.tagsList)
     const dispatch = useDispatch()
 
+    //States for tag name and color inputs
     const [nameInput, setNameInput] = useState(0);
     const [colorInput, setColorInput] = useState('red');
 
-    const colors = ['red', 'orange', 'brown']
+    //
+    //
+    //Available colors for tags
+    const availableColors = ['red', 'orange', 'brown']
+    //
+    //
+    //
 
+    //Create new instance of component for each tag in state
     const tagToTagItem = tag => {
-        const {name,color} = tag;
-        
-        return <TagItem key={name} name={name} color={color} />
+        const { tagName, tagColor } = tag;
+
+        return <TagItem key={tagName} tagName={tagName} tagColor={tagColor} />
     };
 
     const handleAddTag = () => {
         let nameAndColor = {
-            name: nameInput, 
-            color: colorInput
+            tagName: nameInput,
+            tagColor: colorInput
         }
 
-        if(tags.some((item) => item.name === nameInput)){
+        //Check if tag with this name already exists and return if there is one
+        if (tags.some((item) => item.tagName === nameInput)) {
             console.log("This tag already exists!")
             return
         }
-        
+
+        //Add tag with provided name and color
         dispatch(addTag(nameAndColor))
     }
 
-    const availableColors = color => {
+    //Return new option for each color in available colors ^
+    const colorOptions = color => {
         return <option key={color} style={{ backgroundColor: `${color}` }}>{color}</option>
     }
 
@@ -43,7 +54,7 @@ export function TagsList() {
             <button onClick={handleAddTag}>Add tag</button>
             <input type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
             <select name="" id="" value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
-                {colors.map(availableColors)}
+                {availableColors.map(colorOptions)}
             </select>
             <ul className="tagsList">
                 {tags.map(tagToTagItem)}

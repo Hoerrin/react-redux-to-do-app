@@ -1,4 +1,4 @@
-.nav{
+.nav {
     height: 100%;
     display: grid;
     grid-template-rows: 35% 65%;
@@ -8,22 +8,22 @@
     padding: 50px;
 }
 
-.nav__tab{
+.nav__tab {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.nav__item{
+.nav__item {
     font-weight: normal;
     margin-right: 5px;
-    
+
 }
 
-.nav__item--selected{
+.nav__item--selected {
     font-weight: bold;
 }
 
-.nav__itemNumber{
+.nav__itemNumber {
     font-weight: lighter;
 }
