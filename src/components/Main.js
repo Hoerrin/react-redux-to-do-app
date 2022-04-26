@@ -13,7 +13,7 @@ function Main() {
     return (
         <div className="main">
             <div className="main__header">
-                <h1>Today</h1>
+                <h1>My Day</h1>
                 <label><input type="checkbox" checked={filter.showCompleted} onChange={() => dispatch(changeShowCompleted())}></input>Show completed</label>
             </div>
             <TasksList />
