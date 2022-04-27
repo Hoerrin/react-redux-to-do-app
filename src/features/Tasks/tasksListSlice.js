@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasksListSlice = createSlice({
     name: 'tasksList',
     initialState: [
-        {
+    //Test use only 
+        /*{
             title: "title",
             description: "description",
             taskKey: "test25356",
@@ -22,19 +23,16 @@ export const tasksListSlice = createSlice({
                 //tagName: "tag",
                 //tagColor: "#f00"
             }
-        }
+        }*/
     ],
     reducers: {
-        addTask: (state) => {
+        addTask: (state, action) => {
             state.push({
-                title: "test",
-                description: "test",
-                taskKey: "test" + Math.floor(Math.random() * 100000),
+                title: action.payload.taskTitle,
+                description: action.payload.taskDescr,
+                taskKey: action.payload.taskTitle + Math.floor(Math.random() * 10000),
                 completed: false,
-                tag: {
-                    //tagName: "testTag",
-                    //tagColor: "#0f0"
-                }
+                tag: JSON.parse(action.payload.taskTag)
             })
         },
         addTagToTask: (state, action) => {

@@ -3,16 +3,17 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tagsListSlice = createSlice({
     name: 'tagsList',
     initialState: [
-        {
-            itemKey: "tag1",
+        //Test use only
+        /*{
+            tagKey: "tag1",
             tagName: "tag1",
             tagColor: "#f00"
         },
         {
-            itemKey: "tag2",
+            tagKey: "tag2",
             tagName: "tag2",
             tagColor: "#f0f"
-        }
+        }*/
     ],
     reducers: {
         addTag: (state, action) => {
@@ -27,14 +28,14 @@ export const tagsListSlice = createSlice({
 
             if (action.payload.tagColor) {
                 state.push({
-                    itemKey: action.payload.tagName,
+                    tagKey: action.payload.tagName,
                     tagName: action.payload.tagName,
                     tagColor: action.payload.tagColor
                 })
             }
         },
         removeTag: (state, action) => {
-            const index = state.findIndex(item => item.itemKey === action.payload)
+            const index = state.findIndex(item => item.tagKey === action.payload)
             state.splice(index, 1)
         }
     },

@@ -1,0 +1,11 @@
+.addTaskPU__container{
+    position: fixed;
+    width: 20vw;
+    min-width: 300px;
+    background-color: white;
+    align-self: center;
+}
+
+.addTaskPU__warning{
+    color: red;
+}

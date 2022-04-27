@@ -53,7 +53,7 @@ export function TagsList() {
         <>
             <button onClick={handleAddTag}>Add tag</button>
             <input type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
-            <select name="" id="" value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
+            <select value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
                 {availableColors.map(colorOptions)}
             </select>
             <ul className="tagsList">

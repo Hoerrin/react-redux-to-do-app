@@ -1,7 +1,6 @@
 import * as React from "react";
 import { TaskItem } from "./TaskItem";
-import { useDispatch, useSelector } from 'react-redux'
-import { addTask } from "../features/Tasks/tasksListSlice";
+import { useSelector } from 'react-redux'
 import './TasksList.css'
 
 
@@ -10,7 +9,6 @@ export function TasksList() {
     const tasks = useSelector((state) => state.tasksList)
     //Selected filters for viewing tasks
     const filter = useSelector((state) => state.filterTasks)
-    const dispatch = useDispatch()
 
     //Create new task component for each task in state
     const taskToTaskItem = task => {
@@ -35,7 +33,6 @@ export function TasksList() {
 
     return (
         <>
-            <button onClick={() => dispatch(addTask())}>Create task</button>
             <ul className="tasksList">
                 {tasks.map(taskToTaskItem)}
             </ul>
