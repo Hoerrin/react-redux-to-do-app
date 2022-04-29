@@ -27,28 +27,29 @@ function AddTaskPU() {
 
     if (taskTitle){
       dispatch(addTask({ taskTitle, taskDescription, taskTag }))
+      return
     }
     
     //If no task name provided show warning
     setWarning('Provide task name!')
 
-    //Reset wrning after 3000ms
+    //Reset wrning after 2000ms
     setTimeout(() => {
       setWarning('')
-    }, 3000);
+    }, 2000);
     
   }
 
   return (
     <div className='addTaskPU__container'>
-      <label>Task name <input type="text" required="required"  value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
-      <label>Description <input type="text" placeholder='optional' value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
-      <label>Tag <select name="taskTag" id="taskTag" value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
+      <label className='addTaskPU__label'>Task name <input type="text" required="required" className='addTaskPU__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
+      <label className='addTaskPU__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskPU__input addTaskPU__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
+      <label className='addTaskPU__label'>Tag <select name="taskTag" className='addTaskPU__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
       <option key='noneOption' value={JSON.stringify({})}>None</option>
         {tags.map(tagToTagItem)}
       </select></label>
-      <button onClick={handleAddTask}>Add task</button>
       <p className='addTaskPU__warning'>{Warning}</p>
+      <button onClick={handleAddTask}>Add task</button>
     </div>
   )
 }

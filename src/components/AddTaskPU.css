@@ -1,11 +1,36 @@
 .addTaskPU__container{
+    display: flex;
+    flex-flow: column;
     position: fixed;
-    width: 20vw;
+    margin-top: -25px;
+    width: 20em;
     min-width: 300px;
     background-color: white;
     align-self: center;
+    padding: 1em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.addTaskPU__label{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    margin-bottom: 1.5em;
+    align-items: center;
+}
+
+.addTaskPU__input{
+    min-height: 2em;
+    border-radius: 1em;
+    border-width: 1px;
+    padding-left: 0.5em;
+}
+
+.addTaskPU__input--textarea{
+    resize: vertical;
 }
 
 .addTaskPU__warning{
     color: red;
+    padding: 0.5em;
 }

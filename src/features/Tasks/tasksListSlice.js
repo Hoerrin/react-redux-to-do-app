@@ -29,7 +29,7 @@ export const tasksListSlice = createSlice({
         addTask: (state, action) => {
             state.push({
                 title: action.payload.taskTitle,
-                description: action.payload.taskDescr,
+                description: action.payload.taskDescription,
                 taskKey: action.payload.taskTitle + Math.floor(Math.random() * 10000),
                 completed: false,
                 tag: JSON.parse(action.payload.taskTag)
