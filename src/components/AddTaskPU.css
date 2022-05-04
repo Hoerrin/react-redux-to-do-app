@@ -28,9 +28,21 @@
 
 .addTaskPU__input--textarea{
     resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
+    min-width: 2em;
 }
 
 .addTaskPU__warning{
     color: red;
-    padding: 0.5em;
+}
+
+.addTaskPU__button{
+    align-self: center;
+    height: 2em;
+    width: 10em;
+    border-radius: 1em;
+    border: none;
+    background-color: #C80E0E;
+    color: white;
 }

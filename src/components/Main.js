@@ -12,6 +12,7 @@ function Main() {
 
     return (
         <div className="main">
+            <div className='main_blur'></div>
             <AddTaskPU />
             <div className="main__header">
                 <h1>My Day</h1>

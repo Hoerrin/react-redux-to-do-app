@@ -48,8 +48,8 @@ function AddTaskPU() {
       <option key='noneOption' value={JSON.stringify({})}>None</option>
         {tags.map(tagToTagItem)}
       </select></label>
+      <button className='addTaskPU__button' onClick={handleAddTask}>Add task</button>
       <p className='addTaskPU__warning'>{Warning}</p>
-      <button onClick={handleAddTask}>Add task</button>
     </div>
   )
 }
