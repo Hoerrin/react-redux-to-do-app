@@ -3,7 +3,8 @@
     display: inline-grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    width: 600px;
+    width: 90%;
+    min-width: 300px;
     padding: 20px;
     margin: 25px;
     border-radius: 25px;
@@ -24,6 +25,7 @@
 }
 
 .card__content--title{
+    font-size: 1.3rem;
     word-break: break-all;   
 }
 
