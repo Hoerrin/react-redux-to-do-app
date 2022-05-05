@@ -3,7 +3,7 @@
     display: inline-grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    width: 90%;
+    width: 25vw;
     min-width: 300px;
     padding: 20px;
     margin: 25px;
@@ -24,12 +24,12 @@
     align-items: flex-start;
 }
 
-.card__content--title{
+.card__content--title {
     font-size: 1.3rem;
-    word-break: break-all;   
+    word-break: break-all;
 }
 
-.card__content--description{
+.card__content--description {
     word-break: break-all;
 }
 

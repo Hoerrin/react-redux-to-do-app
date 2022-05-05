@@ -1,4 +1,4 @@
 .tasksList {
-    column-count: 2;
+    column-count: auto;
     column-gap: 0;
 }

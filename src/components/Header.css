@@ -4,6 +4,6 @@
     align-items: center;
     width: 100vw;
     height: 70px;
-    min-height: 70px;
     background-color: #C80E0E;
+    z-index: 99;
 }

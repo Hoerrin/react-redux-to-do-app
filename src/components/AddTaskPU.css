@@ -1,4 +1,5 @@
-.addTaskPU__container{
+.addTaskPU {
+    top: 95px;
     display: flex;
     flex-flow: column;
     position: fixed;
@@ -10,24 +11,29 @@
     padding: 1em;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    transition: all .5s ease-in-out;
 }
 
-.addTaskPU__label{
+.addTaskPU--hidden {
+    top: -200px
+}
+
+.addTaskPU__label {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     margin-bottom: 1.5em;
     align-items: center;
 }
 
-.addTaskPU__input{
+.addTaskPU__input {
     min-height: 2em;
     border-radius: 1em;
     border-width: 1px;
     padding-left: 0.5em;
-    -webkit-appearance:none;
+    -webkit-appearance: none;
 }
 
-.addTaskPU__input--textarea{
+.addTaskPU__input--textarea {
     resize: vertical;
     font-family: inherit;
     font-size: inherit;
@@ -35,11 +41,11 @@
     border-bottom-right-radius: 0;
 }
 
-.addTaskPU__warning{
+.addTaskPU__warning {
     color: red;
 }
 
-.addTaskPU__button{
+.addTaskPU__button {
     align-self: center;
     height: 2em;
     width: 10em;

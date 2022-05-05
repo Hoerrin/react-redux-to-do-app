@@ -2,10 +2,8 @@
     height: 100%;
     display: grid;
     grid-template-rows: 35% 65%;
-    width: 20vw;
-    min-width: 250px;
     background-color: #fff;
-    padding: 50px;
+    padding: 25px;
 }
 
 .nav__tab {
