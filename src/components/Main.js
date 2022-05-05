@@ -15,7 +15,10 @@ function Main() {
             <div className='main_blur'></div>
             <AddTaskPU />
             <div className="main__header">
-                <h1>My Day</h1>
+                <div className='main__headerContainer'>
+                    <h1>My Day</h1>
+                    <button className='main__addTagButton'>+</button>
+                </div>
                 <label><input type="checkbox" checked={filter.showCompleted} onChange={() => dispatch(changeShowCompleted())}></input>Show completed</label>
             </div>
             <TasksList />

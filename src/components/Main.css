@@ -15,7 +15,23 @@
     align-items: center;
 }
 
-.main_blur{
+.main__headerContainer {
+    display: flex;
+}
+
+.main__addTagButton {
+    margin-left: 1em;
+    font-size: 1em;
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+    border: none;
+    background-color: #C80E0E;
+    color: white;
+}
+
+
+.main_blur {
     margin: -25px 0px 0px -25px;
     position: absolute;
 }
