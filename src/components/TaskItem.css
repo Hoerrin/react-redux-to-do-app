@@ -4,7 +4,8 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 25vw;
-    min-width: 300px;
+    min-width: 20em;
+    min-height: 6em;
     padding: 20px;
     margin: 25px;
     border-radius: 25px;
@@ -34,15 +35,36 @@
 }
 
 .card__controls {
-    width: 7em;
+    max-width: 7em;
     height: 100%;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
-.card__controls--tag {
+.card__buttons--container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.buttons__edit, .buttons__delete {
+    height: 1em;
+    width: 1em;
+    margin-left: 0.5em;
+}
+
+
+.buttons__edit:hover {
+    cursor: pointer;
+}
+
+.buttons__delete:hover {
+    cursor: pointer;
+}
+
+.card__tag {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,3 +76,4 @@
     border-radius: 50%;
     margin: 5px;
 }
+
