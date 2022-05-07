@@ -43,25 +43,25 @@
     justify-content: space-between;
 }
 
-.card__buttons--container{
+.card__buttons--container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
-.buttons__edit, .buttons__delete {
+.buttons__edit,
+.buttons__delete {
     height: 1em;
     width: 1em;
     margin-left: 0.5em;
+    transition: all .2s
 }
 
 
-.buttons__edit:hover {
-    cursor: pointer;
-}
-
+.buttons__edit:hover,
 .buttons__delete:hover {
     cursor: pointer;
+    color: #C80E0E;
 }
 
 .card__tag {
@@ -76,4 +76,3 @@
     border-radius: 50%;
     margin: 5px;
 }
-
