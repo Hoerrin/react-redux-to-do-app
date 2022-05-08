@@ -29,8 +29,16 @@
 }
 
 
-.main_blur {
-    margin: -25px 0px 0px -25px;
+.main__blur {
     position: absolute;
-    height: calc(100% - 95px);
+    height: calc(100% - 4rem);
+    width: calc(100% - 20rem);
+    margin: -25px;
+    backdrop-filter: blur(3px);
+    transition: all 0.5s;
+}
+
+.main__blur--hidden {
+    backdrop-filter: blur(0px);
+    visibility: hidden;
 }

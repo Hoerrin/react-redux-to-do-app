@@ -27,7 +27,7 @@ function AddTaskPU(props) {
 
     if (taskTitle){
       dispatch(addTask({ taskTitle, taskDescription, taskTag }))
-      props.switchPopUp()
+      props.switchPopUp(false)
       return
     }
     

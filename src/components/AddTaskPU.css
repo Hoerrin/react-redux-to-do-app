@@ -1,9 +1,8 @@
 .addTaskPU {
-    top: 95px;
+    top: 4rem;
     display: flex;
     flex-flow: column;
     position: fixed;
-    margin-top: -25px;
     width: 20em;
     min-width: 300px;
     background-color: white;

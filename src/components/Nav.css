@@ -1,5 +1,4 @@
 .nav {
-    height: 100%;
     display: grid;
     grid-template-rows: 35% 65%;
     background-color: #fff;
