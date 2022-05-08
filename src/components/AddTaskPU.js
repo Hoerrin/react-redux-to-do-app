@@ -27,6 +27,10 @@ function AddTaskPU(props) {
 
     if (taskTitle){
       dispatch(addTask({ taskTitle, taskDescription, taskTag }))
+      setTaskNameInput('')
+      setTaskDescrInput('')
+      seTtaskTagInput(JSON.stringify({}))
+
       props.switchPopUp(false)
       return
     }
