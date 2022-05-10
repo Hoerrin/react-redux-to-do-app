@@ -30,8 +30,7 @@ function AddTaskPU(props) {
       setTaskNameInput('')
       setTaskDescrInput('')
       seTtaskTagInput(JSON.stringify({}))
-
-      props.switchPopUp(false)
+      props.closePopUp()
       return
     }
     
