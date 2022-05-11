@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Main.css';
 import { TasksList } from './TasksList'
 import { useDispatch, useSelector } from "react-redux";
@@ -7,20 +7,29 @@ import AddTaskPU from './AddTaskPU';
 
 function Main() {
     const dispatch = useDispatch()
+
     const filter = useSelector((state) => state.filterTasks)
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false)
+
 
     const closePopUp = () => {
-        const popUp = document.getElementsByClassName("addTaskPU")[0]
-        const blur = document.getElementsByClassName("main__blur")[0]
+        if (isPopUpOpen) {
+            const popUp = document.getElementsByClassName("addTaskPU")[0]
+            const blur = document.getElementsByClassName("main__blur")[0]
 
-        popUp.classList.add("addTaskPU--hidden")
-        blur.classList.add("main__blur--hidden")
+            setIsPopUpOpen(false)
+            popUp.classList.add("addTaskPU--hidden")
+            blur.classList.add("main__blur--hidden")
+        }
     }
 
     const openPopUp = () => {
         const popUp = document.getElementsByClassName("addTaskPU")[0]
         const blur = document.getElementsByClassName("main__blur")[0]
-
+        const taskNameInput = document.getElementById("addTaskPU__addTaskInput")
+        
+        setIsPopUpOpen(true)
+        taskNameInput.focus()
         popUp.classList.remove("addTaskPU--hidden")
         blur.classList.remove("main__blur--hidden")
     }

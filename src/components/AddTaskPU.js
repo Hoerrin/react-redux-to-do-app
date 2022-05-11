@@ -46,7 +46,7 @@ function AddTaskPU(props) {
 
   return (
     <div className='addTaskPU addTaskPU--hidden'>
-      <label className='addTaskPU__label'>Task name <input type="text" required="required" className='addTaskPU__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
+      <label className='addTaskPU__label' id='addTaskPU__addTaskInput'>Task name <input type="text" required="required" className='addTaskPU__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
       <label className='addTaskPU__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskPU__input addTaskPU__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
       <label className='addTaskPU__label'>Tag <select name="taskTag" className='addTaskPU__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
       <option key='noneOption' value={JSON.stringify({})}>None</option>
