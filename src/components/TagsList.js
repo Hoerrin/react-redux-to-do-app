@@ -51,15 +51,18 @@ export function TagsList() {
 
     return (
         <>
-            <button onClick={handleAddTag}>Add tag</button>
-            <input type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
-            <select value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
-                {availableColors.map(colorOptions)}
-            </select>
+            <div className="tagsList__container">
+                <div className="tagsList__input--container">
+                    <input className="tagsList__input" type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
+                    <select className="tagsList__select" value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
+                        {availableColors.map(colorOptions)}
+                    </select>
+                </div>
+            <button className="tagsList__button" onClick={handleAddTag}>+</button>
+            </div>
             <ul className="tagsList">
                 {tags.map(tagToTagItem)}
             </ul>
         </>
-
     );
 }

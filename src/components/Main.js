@@ -38,7 +38,7 @@ function Main() {
             <div className='main__blur main__blur--hidden'></div>
             <AddTaskDropdown openDropdown={openDropdown} closeDropdown={closeDropdown} />
             <div className="main__header">
-                <div className='main__headerContainer'>
+                <div className='main__header--container'>
                     <h1>My Day</h1>
                     <button onClick={openDropdown} className='main__addTagButton'>+</button>
                 </div>

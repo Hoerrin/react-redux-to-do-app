@@ -5,6 +5,11 @@
     padding: 25px;
 }
 
+.nav__bottom{
+    border-top: 1px solid #adadad;
+    padding-top: 1em;
+}
+
 .nav__tab {
     display: flex;
     align-items: center;

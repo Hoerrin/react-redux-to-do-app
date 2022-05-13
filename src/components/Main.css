@@ -13,8 +13,9 @@
     align-items: center;
 }
 
-.main__headerContainer {
+.main__header--container {
     display: flex;
+    align-items: center;
 }
 
 .main__addTagButton {
