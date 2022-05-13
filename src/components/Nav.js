@@ -17,7 +17,7 @@ function Nav() {
                     <h3 className="nav__item">Important</h3><p className="nav__itemNumber">{tasks.length}</p>
                 </div>
                 <div className="nav__tab">
-                    <h3 className="nav__item">To-Do</h3><p className="nav__itemNumber">6</p>
+                    <h3 className="nav__item">To-Do</h3><p className="nav__itemNumber">{tasks.length}</p>
                 </div>
             </div>
             <div className="nav__bottom">

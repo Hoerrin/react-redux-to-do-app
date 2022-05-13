@@ -44,12 +44,25 @@
     color: red;
 }
 
-.addTaskDropdown__button {
+.addTaskDropdown__button--container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.addTaskDropdown__button--add, .addTaskDropdown__button--close {
     align-self: center;
     height: 2em;
-    width: 10em;
+    width: 8em;
     border-radius: 1em;
     border: none;
+}
+
+.addTaskDropdown__button--add{
+    background-color: #838383;
+    color: white;
+}
+
+.addTaskDropdown__button--close {
     background-color: #C80E0E;
     color: white;
 }
