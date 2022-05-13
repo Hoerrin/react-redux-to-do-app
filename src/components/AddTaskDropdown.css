@@ -1,4 +1,4 @@
-.addTaskPU {
+.addTaskDropdown {
     top: 4rem;
     display: flex;
     flex-flow: column;
@@ -13,18 +13,18 @@
     transition: all .5s ease-in-out;
 }
 
-.addTaskPU--hidden {
+.addTaskDropdown--hidden {
     top: -200px
 }
 
-.addTaskPU__label {
+.addTaskDropdown__label {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     margin-bottom: 1.5em;
     align-items: center;
 }
 
-.addTaskPU__input {
+.addTaskDropdown__input {
     min-height: 2em;
     border: 1px solid black ;
     border-radius: 1em;
@@ -32,7 +32,7 @@
     -webkit-appearance: none;
 }
 
-.addTaskPU__input--textarea {
+.addTaskDropdown__input--textarea {
     resize: vertical;
     font-family: inherit;
     font-size: inherit;
@@ -40,11 +40,11 @@
     border-bottom-right-radius: 0;
 }
 
-.addTaskPU__warning {
+.addTaskDropdown__warning {
     color: red;
 }
 
-.addTaskPU__button {
+.addTaskDropdown__button {
     align-self: center;
     height: 2em;
     width: 10em;

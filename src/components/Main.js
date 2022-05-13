@@ -3,45 +3,44 @@ import './Main.css';
 import { TasksList } from './TasksList'
 import { useDispatch, useSelector } from "react-redux";
 import { changeShowCompleted } from "../features/Tasks/filterTasksSlice";
-import AddTaskPU from './AddTaskPU';
+import AddTaskDropdown from './AddTaskDropdown';
 
 function Main() {
     const dispatch = useDispatch()
 
     const filter = useSelector((state) => state.filterTasks)
-    const [isPopUpOpen, setIsPopUpOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-
-    const closePopUp = () => {
-        if (isPopUpOpen) {
-            const popUp = document.getElementsByClassName("addTaskPU")[0]
+    const closeDropdown = () => {
+        if (isDropdownOpen) {
+            const Dropdown = document.getElementsByClassName("addTaskDropdown")[0]
             const blur = document.getElementsByClassName("main__blur")[0]
 
-            setIsPopUpOpen(false)
-            popUp.classList.add("addTaskPU--hidden")
+            setIsDropdownOpen(false)
+            Dropdown.classList.add("addTaskDropdown--hidden")
             blur.classList.add("main__blur--hidden")
         }
     }
 
-    const openPopUp = () => {
-        const popUp = document.getElementsByClassName("addTaskPU")[0]
+    const openDropdown = () => {
+        const dropdown = document.getElementsByClassName("addTaskDropdown")[0]
         const blur = document.getElementsByClassName("main__blur")[0]
-        const taskNameInput = document.getElementById("addTaskPU__addTaskInput")
+        const taskNameInput = document.getElementById("addTaskDropdown__addTaskInput")
         
-        setIsPopUpOpen(true)
+        setIsDropdownOpen(true)
         taskNameInput.focus()
-        popUp.classList.remove("addTaskPU--hidden")
+        dropdown.classList.remove("addTaskDropdown--hidden")
         blur.classList.remove("main__blur--hidden")
     }
 
     return (
         <div className="main">
             <div className='main__blur main__blur--hidden'></div>
-            <AddTaskPU openPopUp={openPopUp} closePopUp={closePopUp} />
+            <AddTaskDropdown openDropdown={openDropdown} closeDropdown={closeDropdown} />
             <div className="main__header">
                 <div className='main__headerContainer'>
                     <h1>My Day</h1>
-                    <button onClick={openPopUp} className='main__addTagButton'>+</button>
+                    <button onClick={openDropdown} className='main__addTagButton'>+</button>
                 </div>
                 <label><input type="checkbox" checked={filter.showCompleted} onChange={() => dispatch(changeShowCompleted())}></input> Show completed</label>
             </div>

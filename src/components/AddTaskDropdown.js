@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTask } from '../features/Tasks/tasksListSlice'
-import './AddTaskPU.css'
+import { useDetectClickOutside } from 'react-detect-click-outside';
+import './AddTaskDropdown.css'
 
-function AddTaskPU(props) {
+function AddTaskDropdown(props) {
   const tags = useSelector((state) => state.tagsList)
   const dispatch = useDispatch()
+  const ref = useDetectClickOutside({ onTriggered: props.closeDropdown });
 
   //States for tag name and color inputs
   const [taskNameInput, setTaskNameInput] = useState('');
@@ -45,17 +47,17 @@ function AddTaskPU(props) {
   }
 
   return (
-    <div className='addTaskPU addTaskPU--hidden'>
-      <label className='addTaskPU__label' id='addTaskPU__addTaskInput'>Task name <input type="text" required="required" className='addTaskPU__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
-      <label className='addTaskPU__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskPU__input addTaskPU__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
-      <label className='addTaskPU__label'>Tag <select name="taskTag" className='addTaskPU__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
+    <div ref={ref} className='addTaskDropdown addTaskDropdown--hidden'>
+      <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required="required" className='addTaskDropdown__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
+      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
+      <label className='addTaskDropdown__label'>Tag <select name="taskTag" className='addTaskDropdown__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
       <option key='noneOption' value={JSON.stringify({})}>None</option>
         {tags.map(tagToTagItem)}
       </select></label>
-      <button className='addTaskPU__button' onClick={handleAddTask}>Add task</button>
-      <p className='addTaskPU__warning'>{Warning}</p>
+      <button className='addTaskDropdown__button' onClick={handleAddTask}>Add task</button>
+      <p className='addTaskDropdown__warning'>{Warning}</p>
     </div>
   )
 }
 
-export default AddTaskPU
+export default AddTaskDropdown
