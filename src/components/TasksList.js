@@ -7,7 +7,7 @@ import './TasksList.css'
 export function TasksList() {
     //Every task
     const tasks = useSelector((state) => state.tasksList)
-    //Selected filters for viewing tasks
+    //Filter states
     const filter = useSelector((state) => state.filterTasks)
 
     //Create new task component for each task in state

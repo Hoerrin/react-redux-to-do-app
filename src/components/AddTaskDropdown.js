@@ -45,21 +45,24 @@ function AddTaskDropdown(props) {
   }
 
   const handleCloseDropdown = () => {
-      setTaskNameInput('')
-      setTaskDescrInput('')
-      seTtaskTagInput(JSON.stringify({}))
-      props.closeDropdown()
-      return
+    setTaskNameInput('')
+    setTaskDescrInput('')
+    seTtaskTagInput(JSON.stringify({}))
+    props.closeDropdown()
+    return
   }
 
   return (
     <div className='addTaskDropdown addTaskDropdown--hidden'>
       <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required="required" className='addTaskDropdown__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
       <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
-      <label className='addTaskDropdown__label'>Tag <select name="taskTag" className='addTaskDropdown__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
-        <option key='noneOption' value={JSON.stringify({})}>None</option>
-        {tags.map(tagToTagItem)}
-      </select></label>
+      <label className='addTaskDropdown__label'>
+        Tag
+        <select name="taskTag" className='addTaskDropdown__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
+          <option key='noneOption' value={JSON.stringify({})}>None</option>
+          {tags.map(tagToTagItem)}
+        </select>
+      </label>
       <div className='addTaskDropdown__button--container'>
         <button className='addTaskDropdown__button--add' onClick={handleCloseDropdown}>Close</button>
         <button className='addTaskDropdown__button--close' onClick={handleAddTask}>Add task</button>

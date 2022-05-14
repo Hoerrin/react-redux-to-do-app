@@ -53,7 +53,7 @@ export function TagsList() {
         <>
             <div className="tagsList__container">
                 <div className="tagsList__input--container">
-                    <input className="tagsList__input" type="text" value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
+                    <input className="tagsList__input" type="text" maxLength={25} value={nameInput.value} onChange={(e) => setNameInput(e.target.value)} />
                     <select className="tagsList__select" value={colorInput.value} onChange={(e) => setColorInput(e.target.value)}>
                         {availableColors.map(colorOptions)}
                     </select>

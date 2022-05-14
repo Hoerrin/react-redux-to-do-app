@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const filterTasks = createSlice({
+export const filterTasksSlice = createSlice({
     name: 'tagsList',
     initialState:
     {
@@ -18,6 +18,6 @@ export const filterTasks = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { changeFilter, changeShowCompleted } = filterTasks.actions
+export const { changeFilter, changeShowCompleted } = filterTasksSlice.actions
 
-export default filterTasks.reducer
+export default filterTasksSlice.reducer
