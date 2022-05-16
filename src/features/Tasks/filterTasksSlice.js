@@ -4,7 +4,7 @@ export const filterTasksSlice = createSlice({
     name: 'tagsList',
     initialState:
     {
-        activeFilter: "today",
+        activeFilter: "NONE",
         showCompleted: false
     },
     reducers: {
