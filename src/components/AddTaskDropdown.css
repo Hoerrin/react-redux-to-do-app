@@ -17,6 +17,11 @@
     top: -200px
 }
 
+.addTaskDropdown--hidden label textarea{
+    height: 1em !important;
+    transition: all .4s ease-in-out; 
+}
+
 .addTaskDropdown__label {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
@@ -37,7 +42,9 @@
     font-family: inherit;
     font-size: inherit;
     min-width: 2em;
+    max-height: 10em;
     border-bottom-right-radius: 0;
+    
 }
 
 .addTaskDropdown__warning {

@@ -37,7 +37,7 @@ function AddTaskDropdown(props) {
     //If no task name provided show warning
     setWarning('Provide task name!')
 
-    //Reset wrning after 2000ms
+    //Reset warning after 2000ms
     setTimeout(() => {
       setWarning('')
     }, 2000);
@@ -55,7 +55,7 @@ function AddTaskDropdown(props) {
   return (
     <div className='addTaskDropdown addTaskDropdown--hidden'>
       <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required="required" className='addTaskDropdown__input' maxLength={200} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
-      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={500} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
+      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={300} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
       <label className='addTaskDropdown__label'>
         Tag
         <select name="taskTag" className='addTaskDropdown__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>

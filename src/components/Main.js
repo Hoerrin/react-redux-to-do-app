@@ -13,11 +13,13 @@ function Main() {
 
     const closeDropdown = () => {
         if (isDropdownOpen) {
-            const Dropdown = document.getElementsByClassName("addTaskDropdown")[0]
+            const dropdown = document.getElementsByClassName("addTaskDropdown")[0]
             const blur = document.getElementsByClassName("main__blur")[0]
+            const textarea = document.getElementsByClassName("addTaskDropdown__input--textarea")[0]
 
             setIsDropdownOpen(false)
-            Dropdown.classList.add("addTaskDropdown--hidden")
+            textarea.style.height = "1em";
+            dropdown.classList.add("addTaskDropdown--hidden")
             blur.classList.add("main__blur--hidden")
         }
     }
