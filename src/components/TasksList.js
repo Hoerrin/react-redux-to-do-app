@@ -26,7 +26,7 @@ export function TasksList() {
     //Create new task component for each task in state
     const taskToTaskItem = task => {
         //Task properties
-        const { title, description, taskKey, completed } = task;
+        const { title, description, taskKey, isCompleted, isEdited } = task;
         //Tag name and color 
         const {tagName, tagColor} = task.tag;
 
@@ -35,14 +35,14 @@ export function TasksList() {
             return
         }
 
-        //Show every task including completed if showCompleted filter is active
+        //Show every task including completed ones if showCompleted filter is active
         if (showCompleted) {
-            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tagName={tagName} tagColor={tagColor} />
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} isCompleted={isCompleted} isEdited={isEdited} tagName={tagName} tagColor={tagColor} />
         }
 
         //If showCompleted filter isn't active show only active tasks
-        if (!completed) {
-            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} completed={completed} tagName={tagName} tagColor={tagColor} />
+        if (!isCompleted) {
+            return <TaskItem key={taskKey} title={title} description={description} taskKey={taskKey} isCompleted={isCompleted} isEdited={isEdited} tagName={tagName} tagColor={tagColor} />
         }
 
         return

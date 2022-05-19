@@ -49,8 +49,7 @@
     width: 100%;
 }
 
-.buttons__edit,
-.buttons__delete {
+.buttons__button {
     height: 1em;
     width: 1em;
     margin-left: 0.5em;
@@ -58,8 +57,7 @@
 }
 
 
-.buttons__edit:hover,
-.buttons__delete:hover {
+.buttons__button:hover {
     cursor: pointer;
     color: #C80E0E;
 }

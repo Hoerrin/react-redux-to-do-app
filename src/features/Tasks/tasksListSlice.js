@@ -8,7 +8,8 @@ export const tasksListSlice = createSlice({
             title: "title",
             description: "description",
             taskKey: "test25356",
-            completed: false,
+            isCompleted: false,
+            isEdited: false,
             tag: {
                 //tagName: "tag",
                 //tagColor: "#f00"
@@ -18,7 +19,8 @@ export const tasksListSlice = createSlice({
             title: "title2",
             description: "description",
             taskKey: "test25125",
-            completed: true,
+            isCompleted: true,
+            isEdited: false,
             tag: {
                 //tagName: "tag",
                 //tagColor: "#f00"
@@ -31,7 +33,8 @@ export const tasksListSlice = createSlice({
                 title: action.payload.taskTitle,
                 description: action.payload.taskDescription,
                 taskKey: action.payload.taskTitle + Math.floor(Math.random() * 10000),
-                completed: false,
+                isCompleted: false,
+                isEdited: false,
                 tag: JSON.parse(action.payload.taskTag)
             })
         },
@@ -49,7 +52,7 @@ export const tasksListSlice = createSlice({
         },
         clickTaskCheckbox: (state, action) => {
             const index = state.findIndex(item => item.taskKey === action.payload)
-            state[index].completed = !state[index].completed
+            state[index].isCompleted = !state[index].isCompleted
         },
     },
 })

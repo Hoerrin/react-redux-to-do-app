@@ -2,12 +2,14 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { removeTask, clickTaskCheckbox, addTagToTask } from "../features/Tasks/tasksListSlice";
 import { addTag } from "../features/Tasks/tagsListSlice"
-import {ReactComponent as EditIcon} from '../SVG/edit.svg';
-import {ReactComponent as RemoveIcon} from '../SVG/trash.svg';
+import { ReactComponent as EditIcon } from '../SVG/edit.svg';
+import { ReactComponent as RemoveIcon } from '../SVG/trash.svg';
+import { ReactComponent as CancelIcon } from '../SVG/cancel.svg';
+import { ReactComponent as CheckIcon } from '../SVG/check.svg';
 import './TaskItem.css'
 
 
-export const TaskItem = ({ title, description, taskKey, completed, tagName, tagColor }) => {
+export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, tagName, tagColor }) => {
   const dispatch = useDispatch()
 
   const handleAddTag = (tagName, tagColor) => {
@@ -32,7 +34,7 @@ export const TaskItem = ({ title, description, taskKey, completed, tagName, tagC
   return (
     <li className="card">
       <div className="card__checkbox">
-        <input onChange={() => dispatch(clickTaskCheckbox(taskKey))} type="checkbox" className="card__checkbox--input" checked={completed} style={{ border: `2px ${tagColor} solid` }} />
+        <input onChange={() => dispatch(clickTaskCheckbox(taskKey))} type="checkbox" className="card__checkbox--input" checked={isCompleted} style={{ border: `2px ${tagColor} solid` }} />
       </div>
       <div className="card__content">
         <h1 className="card__content--title">{title}</h1>
@@ -44,8 +46,17 @@ export const TaskItem = ({ title, description, taskKey, completed, tagName, tagC
           <h5 className="tag__name">{tagName ? tagName : 'no tag'}</h5>
         </div>
         <div className="card__buttons--container">
-          <EditIcon className="buttons__edit"/>
-          <RemoveIcon onClick={() => dispatch(removeTask(taskKey))} className="buttons__delete"/>
+          {isEdited ?
+            <>
+              <EditIcon className="buttons__button" />
+              <RemoveIcon onClick={() => dispatch(removeTask(taskKey))} className="buttons__button" />
+            </>
+            :
+            <>
+              <CancelIcon className="buttons__button"/>
+              <CheckIcon className="buttons__button"/>
+            </>
+          }
         </div>
       </div>
     </li>

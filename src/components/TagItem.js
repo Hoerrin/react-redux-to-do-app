@@ -10,7 +10,7 @@ export const TagItem = ({ tagName, tagColor }) => {
   const tasks = useSelector((state) => state.tasksList)
 
   //Tasks using this tag AND marked as completed
-  const filteredTasks = tasks.filter(task => task.tag.tagName === tagName && !task.completed)
+  const filteredTasks = tasks.filter(task => task.tag.tagName === tagName && !task.isCompleted)
 
   const handleRemoveTag = () => {
     //Tasks using this tag
