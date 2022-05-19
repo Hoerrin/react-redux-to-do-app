@@ -62,6 +62,10 @@
     color: #C80E0E;
 }
 
+.buttons__button--check:hover {
+    color: #02a82c;
+}
+
 .card__tag {
     display: flex;
     justify-content: center;
