@@ -32,13 +32,22 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
       }
     }))
 
-    let nameAndColor = {
+    let tagNameAndColor = {
       tagName: tagName,
       tagColor: tagColor
     }
 
     //Add tag to tags list (new tag will add only if there is no tag with this name) 
-    dispatch(addTag(nameAndColor))
+    dispatch(addTag(tagNameAndColor))
+  }
+
+  const handleClickEditTask = () => {
+    //set temp inputs
+    setEditTagInput(JSON.stringify({ tagName, tagColor }))
+    setEditTitleInput(title)
+    setEditDescrInput(description)
+
+    dispatch(toggleEditTask(taskKey))
   }
 
   return (
@@ -58,16 +67,19 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
               <h5 className="tag__name">{tagName ? tagName : 'no tag'}</h5>
             </div>
             <div className="card__buttons--container">
-              <EditIcon onClick={() => dispatch(toggleEditTask(taskKey))} className="buttons__button" />
+              <EditIcon onClick={handleClickEditTask} className="buttons__button" />
               <RemoveIcon onClick={() => dispatch(removeTask(taskKey))} className="buttons__button" />
             </div>
           </div>
         </>
         :
         <>
+        <div className="card__checkbox">
+            <input onChange={() => dispatch(completeTask(taskKey))} disabled type="checkbox" className="card__checkbox--input" checked={isCompleted} style={{ border: `2px ${tagColor} solid` }} />
+          </div>
           <div className="card__content">
-            <input className="card__content--title" value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
-            <input className="card__content--description" value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
+            <input className="card__content--editTitle" value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
+            <textarea className="card__content--editDescription" value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
           </div>
           <div className="card__controls">
             <div className="card__tag">

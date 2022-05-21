@@ -28,10 +28,34 @@
 .card__content--title {
     font-size: 1.3rem;
     word-break: break-all;
+    width: 100%;
 }
 
 .card__content--description {
     word-break: break-all;
+}
+
+.card__content--editTitle {
+    min-height: 2em;
+    border: 1px solid #adadad;
+    border-radius: 1em;
+    padding-left: 0.5em;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.card__content--editDescription {
+    min-height: 2em;
+    border: 1px solid #adadad;
+    border-radius: 1em;
+    padding-left: 0.5em;
+    -webkit-appearance: none;
+    resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
+    min-width: 2em;
+    max-height: 10em;
+    border-bottom-right-radius: 0;
 }
 
 .card__controls {
