@@ -58,7 +58,7 @@ function AddTaskDropdown(props) {
       <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={300} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
       <label className='addTaskDropdown__label'>
         Tag
-        <select name="taskTag" className='addTaskDropdown__input' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
+        <select name="taskTag" className='addTaskDropdown__input addTaskDropdown__input--select' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
           <option key='noneOption' value={JSON.stringify({})}>None</option>
           {tags.map(tagToTagItem)}
         </select>
