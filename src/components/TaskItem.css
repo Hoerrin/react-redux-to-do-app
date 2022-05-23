@@ -11,6 +11,17 @@
     border-radius: 25px;
 }
 
+.card__form{
+    display: inline-grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 25vw;
+    min-width: 20em;
+    min-height: 6em;
+
+
+}
+
 .card__checkbox {
     padding-right: 20px;
 }

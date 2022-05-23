@@ -59,8 +59,9 @@ export const tasksListSlice = createSlice({
             state[index].isEdited = !state[index].isEdited
         },
         editTask: (state, action) => {
-            const index = state.findIndex(item => item.taskKey === action.payload)
-            state[index].isEdited = true
+            const index = state.findIndex(item => item.taskKey === action.payload.taskKey)
+            state[index].title = action.payload.title
+            state[index].description = action.payload.description
         },
     },
 })

@@ -50,6 +50,32 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
     dispatch(toggleEditTask(taskKey))
   }
 
+  const handlekConfirmEditTask = () => {
+    let title = editTitleInput
+    let description = editDescrInput
+    let tag = JSON.parse(editTagInput)
+
+    if (tag) {
+      dispatch(addTagToTask({
+        taskKey: taskKey,
+        tag: {
+          tagName: tag.tagName,
+          tagColor: tag.tagColor
+        }
+      }))
+    }
+
+    if (title) {
+      dispatch(editTask({ title, description, taskKey }))
+      dispatch(toggleEditTask(taskKey))
+    }
+
+  }
+
+  const handleCancelEdit = () => {
+    dispatch(toggleEditTask(taskKey))
+  }
+
   return (
     <li className="card">
       {!isEdited ?
@@ -74,11 +100,11 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
         </>
         :
         <>
-        <div className="card__checkbox">
+          <div className="card__checkbox">
             <input onChange={() => dispatch(completeTask(taskKey))} disabled type="checkbox" className="card__checkbox--input" checked={isCompleted} style={{ border: `2px ${tagColor} solid` }} />
           </div>
           <div className="card__content">
-            <input className="card__content--editTitle" value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
+            <input className="card__content--editTitle" required value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
             <textarea className="card__content--editDescription" value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
           </div>
           <div className="card__controls">
@@ -89,14 +115,8 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
               </select>
             </div>
             <div className="card__buttons--container">
-              <CancelIcon onClick={
-                () => {
-                  dispatch(toggleEditTask(taskKey))
-                  setEditTagInput(JSON.stringify({}))
-                  setEditTitleInput('')
-                  setEditDescrInput('')
-                }} className="buttons__button" />
-              <CheckIcon className="buttons__button buttons__button--check" />
+              <CancelIcon onClick={handleCancelEdit} className="buttons__button" />
+              <CheckIcon onClick={handlekConfirmEditTask} className="buttons__button buttons__button--check" />
             </div>
           </div>
         </>

@@ -58,10 +58,6 @@
     
 }
 
-.addTaskDropdown__warning {
-    color: red;
-}
-
 .addTaskDropdown__button--container {
     display: flex;
     justify-content: space-evenly;
