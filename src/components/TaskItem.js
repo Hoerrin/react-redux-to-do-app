@@ -104,8 +104,8 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
             <input onChange={() => dispatch(completeTask(taskKey))} disabled type="checkbox" className="card__checkbox--input" checked={isCompleted} style={{ border: `2px ${tagColor} solid` }} />
           </div>
           <div className="card__content">
-            <input className="card__content--editTitle" required value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
-            <textarea className="card__content--editDescription" value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
+            <input className="card__content--editTitle" required maxLength={150} value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
+            <textarea className="card__content--editDescription" maxLength={300} value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
           </div>
           <div className="card__controls">
             <div className="card__tag">
