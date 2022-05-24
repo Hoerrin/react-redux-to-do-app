@@ -4,10 +4,11 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 25vw;
-    min-width: 20em;
+    min-width: 25em;
+    height: 8em;
     min-height: 6em;
-    padding: 20px;
-    margin: 25px;
+    padding: 1em;
+    margin: 1em;
     border-radius: 25px;
 }
 
@@ -18,8 +19,6 @@
     width: 25vw;
     min-width: 20em;
     min-height: 6em;
-
-
 }
 
 .card__checkbox {
@@ -34,6 +33,7 @@
 
 .card__content {
     align-items: flex-start;
+    max-height: 6em;
 }
 
 .card__content--title {
@@ -44,6 +44,7 @@
 
 .card__content--description {
     word-break: break-all;
+    white-space: pre-wrap;
 }
 
 .card__content--editTitle {

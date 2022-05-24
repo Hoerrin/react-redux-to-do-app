@@ -55,7 +55,7 @@ function AddTaskDropdown(props) {
         </select>
       </label>
       <div className='addTaskDropdown__button--container'>
-        <button className='addTaskDropdown__button--add' onClick={handleCloseDropdown}>Close</button>
+        <button className='addTaskDropdown__button--add' type="reset" onClick={handleCloseDropdown}>Close</button>
         <button className='addTaskDropdown__button--close' type='submit'>Add task</button>
       </div>
     </form>
