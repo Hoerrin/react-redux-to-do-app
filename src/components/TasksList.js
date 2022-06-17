@@ -8,15 +8,23 @@ export function TasksList() {
     const tasks = useSelector((state) => state.tasksList)
     //Filter state
     const activeFilter = useSelector((state) => state.filterTasks.activeFilter)
+    //selected tag
+    const selectedTag = useSelector((state) => state.filterTasks.selectedTag)
     //showCompleted toggle
     const showCompleted = useSelector((state) => state.filterTasks.showCompleted)
 
     const availableFilters = {
-        NONE: function(){
-                return true
+        NONE: function () {
+            return true
         },
-        TEST: function(task){
-            if(task.description){
+        TEST: function (task) {
+            if (task.description) {
+                return true
+            }
+            return false
+        },
+        TAG: function (task) {
+            if (task.tag.tagName === selectedTag) {
                 return true
             }
             return false
@@ -28,10 +36,10 @@ export function TasksList() {
         //Task properties
         const { title, description, taskKey, isCompleted, isEdited } = task;
         //Tag name and color 
-        const {tagName, tagColor} = task.tag;
+        const { tagName, tagColor } = task.tag;
 
         //Check if task meet the condition of active filter
-        if(!availableFilters[activeFilter](task)){
+        if (!availableFilters[activeFilter](task)) {
             return
         }
 

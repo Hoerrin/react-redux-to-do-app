@@ -5,7 +5,8 @@ export const filterTasksSlice = createSlice({
     initialState:
     {
         activeFilter: "NONE",
-        showCompleted: false
+        showCompleted: false,
+        selectedTag: 'tagTestowy'
     },
     reducers: {
         changeFilter: (state, action) => {
