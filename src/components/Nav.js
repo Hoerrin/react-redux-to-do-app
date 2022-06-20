@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { TagsList } from './TagsList'
-import { changeActiveFilter, changeSelectedTag } from "../features/Tasks/filterTasksSlice";
+import { setFilterNone, clearSelectedTag } from "../features/Tasks/filterTasksSlice";
 import './Nav.css'
 
 function Nav() {
@@ -11,8 +11,8 @@ function Nav() {
 
     //Change active tag to NONE to show every task and reset selected tag state
     const handleClick = () => {
-        dispatch(changeActiveFilter('NONE'));
-        dispatch(changeSelectedTag(''));
+        dispatch(setFilterNone());
+        dispatch(clearSelectedTag());
     }
 
     return (

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeTag } from "../features/Tasks/tagsListSlice";
-import { changeSelectedTag, changeActiveFilter } from "../features/Tasks/filterTasksSlice";
+import { changeSelectedTag, setFilterTag } from "../features/Tasks/filterTasksSlice";
 import { removeTagFromTask } from "../features/Tasks/tasksListSlice";
 import './TagItem.css'
 
@@ -26,7 +26,7 @@ export const TagItem = ({ tagName, tagColor }) => {
 
   const handleSelectTag = (tagName) => {
     dispatch(changeSelectedTag(tagName))
-    dispatch(changeActiveFilter("TAG"))
+    dispatch(setFilterTag())
   }
 
   return (
