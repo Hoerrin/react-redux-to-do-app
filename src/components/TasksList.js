@@ -14,15 +14,16 @@ export function TasksList() {
     const showCompleted = useSelector((state) => state.filterTasks.showCompleted)
 
     const availableFilters = {
-        NONE: function () {
-            return true
-        },
         TEST: function (task) {
             if (task.description) {
                 return true
             }
             return false
         },
+        NONE: function () {
+            return true
+        }
+        ,
         TAG: function (task) {
             if (task.tag.tagName === selectedTag) {
                 return true

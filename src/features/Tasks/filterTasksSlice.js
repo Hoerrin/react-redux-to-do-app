@@ -4,13 +4,16 @@ export const filterTasksSlice = createSlice({
     name: 'tagsList',
     initialState:
     {
-        activeFilter: "NONE",
+        activeFilter: 'NONE',
         showCompleted: false,
-        selectedTag: 'tagTestowy'
+        selectedTag: ''
     },
     reducers: {
-        changeFilter: (state, action) => {
-
+        changeActiveFilter: (state, action) => {
+            state.activeFilter = action.payload
+        },
+        changeSelectedTag: (state, action) => {
+            state.selectedTag = action.payload
         },
         changeShowCompleted: (state) => {
             state.showCompleted = !state.showCompleted
@@ -19,6 +22,6 @@ export const filterTasksSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { changeFilter, changeShowCompleted } = filterTasksSlice.actions
+export const { changeActiveFilter, changeSelectedTag, changeShowCompleted } = filterTasksSlice.actions
 
 export default filterTasksSlice.reducer
