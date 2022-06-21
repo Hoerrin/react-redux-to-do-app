@@ -1,14 +1,14 @@
 import * as React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { removeTag } from "../features/Tasks/tagsListSlice";
-import { changeSelectedTag, setFilterTag } from "../features/Tasks/filterTasksSlice";
+import { changeSelectedTag, setFilterTag, clearSelectedTag, setFilterNone} from "../features/Tasks/filterTasksSlice";
 import { removeTagFromTask } from "../features/Tasks/tasksListSlice";
 import './TagItem.css'
 
 export const TagItem = ({ tagName, tagColor }) => {
   const dispatch = useDispatch()
   const tasks = useSelector((state) => state.tasksList)
+  const selectedTag = useSelector((state) => state.filterTasks.selectedTag)
 
   //Tasks using this tag AND marked as completed
   const filteredTasks = tasks.filter(task => task.tag.tagName === tagName && !task.isCompleted)
@@ -16,6 +16,12 @@ export const TagItem = ({ tagName, tagColor }) => {
   const handleRemoveTag = () => {
     //Tasks using this tag
     const tasksUsingTag = tasks.filter(task => task.tag.tagName === tagName)
+
+    //If deleted tag is set as selectedTag, clear selected tag and set filter to NONE
+    if(tagName === selectedTag){
+      dispatch(setFilterNone())
+      dispatch(clearSelectedTag())
+    }
 
     //Remove tag
     dispatch(removeTag(tagName))

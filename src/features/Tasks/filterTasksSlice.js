@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const filterTasksSlice = createSlice({
-    name: 'tagsList',
+    name: 'filterTasks',
     initialState:
     {
         activeFilter: 'NONE',
