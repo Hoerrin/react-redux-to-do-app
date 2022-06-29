@@ -10,7 +10,7 @@
     padding: 1em;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transition: all .5s ease-in-out;
+    transition: top .5s ease-in-out;
 }
 
 .addTaskDropdown--hidden {
@@ -19,7 +19,7 @@
 
 .addTaskDropdown--hidden label textarea{
     height: 1em !important;
-    transition: all .4s ease-in-out; 
+    transition: height .4s ease-in-out; 
 }
 
 .addTaskDropdown__label {
@@ -35,7 +35,7 @@
     border-radius: 1em;
     padding-left: 0.5em;
     -webkit-appearance: none;
-    transition: all 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
 }
 
 .addTaskDropdown__input--select {

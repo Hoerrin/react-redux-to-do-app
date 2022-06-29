@@ -32,8 +32,12 @@
 }
 
 .card__content {
+    display: flex;
+    flex-flow: column;
     align-items: flex-start;
+    justify-content: space-evenly;
     max-height: 6em;
+    height: 100%;
 }
 
 .card__content--title {
@@ -45,6 +49,7 @@
 .card__content--description {
     word-break: break-all;
     white-space: pre-wrap;
+    overflow: scroll;    
 }
 
 .card__content--editTitle {
