@@ -17,7 +17,7 @@ export const TagItem = ({ tagName, tagColor }) => {
     //Tasks using this tag
     const tasksUsingTag = tasks.filter(task => task.tag.tagName === tagName)
 
-    //If deleted tag is set as selectedTag, clear selected tag and set filter to NONE
+    //If deleted tag was set as selectedTag, clear selected tag and set filter to NONE
     if(tagName === selectedTag){
       dispatch(setFilterNone())
       dispatch(clearSelectedTag())

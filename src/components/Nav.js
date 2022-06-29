@@ -6,6 +6,7 @@ import './Nav.css'
 
 function Nav() {
     const dispatch = useDispatch()
+    
     //Only tasks marked as completed
     const tasks = useSelector((state) => state.tasksList.filter(task => !task.isCompleted))
 

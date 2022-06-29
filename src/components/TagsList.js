@@ -16,7 +16,7 @@ export function TagsList() {
     //
     //
     //Available colors for tags
-    const availableColors = ['red', 'orange', 'brown']
+    const availableColors = ['red', 'green', 'blue', 'orange', 'violet', 'pink']
     //
     //
     //
