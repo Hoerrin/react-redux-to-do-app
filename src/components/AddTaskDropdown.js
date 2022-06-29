@@ -7,10 +7,18 @@ function AddTaskDropdown(props) {
   const tags = useSelector((state) => state.tagsList)
   const dispatch = useDispatch()
 
-  //States for tag name and color inputs
-  const [taskNameInput, setTaskNameInput] = useState('');
-  const [taskDescrInput, setTaskDescrInput] = useState('');
-  const [taskTagInput, seTtaskTagInput] = useState(JSON.stringify({}));
+  //Dropdown state
+  const [dropdownState, setDropdownState] = useState({});
+
+  //Add key/update value in state object when change in inputs occurred
+  const handleChange = ({ target }) => {
+    const { name, value } = target
+
+    setDropdownState((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
 
   //Create new option for each tag in state
   const tagToTagItem = tag => {
@@ -21,35 +29,29 @@ function AddTaskDropdown(props) {
 
   const handleAddTask = (e) => {
     e.preventDefault()
-    const taskTitle = taskNameInput;
-    const taskDescription = taskDescrInput;
-    const taskTag = taskTagInput;
+    const { taskTitle, taskDescription, taskTag = JSON.stringify({})} = dropdownState;
 
     if (taskTitle) {
       dispatch(addTask({ taskTitle, taskDescription, taskTag }))
-      setTaskNameInput('')
-      setTaskDescrInput('')
-      seTtaskTagInput(JSON.stringify({}))
+      setDropdownState({})
       props.closeDropdown()
       return
     }
   }
 
   const handleCloseDropdown = () => {
-    setTaskNameInput('')
-    setTaskDescrInput('')
-    seTtaskTagInput(JSON.stringify({}))
+    setDropdownState({})
     props.closeDropdown()
     return
   }
 
   return (
     <form className='addTaskDropdown addTaskDropdown--hidden' onSubmit={handleAddTask}>
-      <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required className='addTaskDropdown__input' maxLength={150} value={taskNameInput} onChange={(e) => setTaskNameInput(e.target.value)} /></label>
-      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={300} value={taskDescrInput} onChange={(e) => setTaskDescrInput(e.target.value)} /></label>
+      <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required className='addTaskDropdown__input' maxLength={150} value={dropdownState.taskTitle || ''} name='taskTitle' onChange={handleChange} /></label>
+      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={300} value={dropdownState.taskDescription || ''} name="taskDescription" onChange={handleChange} /></label>
       <label className='addTaskDropdown__label'>
         Tag
-        <select name="taskTag" className='addTaskDropdown__input addTaskDropdown__input--select' value={taskTagInput} onChange={(e) => seTtaskTagInput(e.target.value)}>
+        <select className='addTaskDropdown__input addTaskDropdown__input--select' value={dropdownState.taskTag} name="taskTag" onChange={handleChange}>
           <option key='noneOption' value={JSON.stringify({})}>None</option>
           {tags.map(tagToTagItem)}
         </select>
