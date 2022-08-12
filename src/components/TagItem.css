@@ -1,7 +1,15 @@
 .tagItem {
     display: flex;
-    align-items: center;
     margin-top: 0.5em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tagItem__container--left, .tagItem__container--right {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
 }
 
 .tagItem__circle {
@@ -11,7 +19,7 @@
     margin: 0.3em;
 }
 
-.tagItem___tasksNumber {
+.tagItem__tasksNumber {
     font-weight: 600;
-    margin-left: 10px
+    margin-right: 1em;
 }

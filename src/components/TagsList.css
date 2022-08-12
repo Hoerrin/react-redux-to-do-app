@@ -35,6 +35,8 @@
 .tagsList__button{
     margin-left: 1em;
     font-size: 1em;
+    min-height: 2em;
+    min-width: 2em;
     height: 2em;
     width: 2em;
     border-radius: 1em;
