@@ -4,7 +4,7 @@ export const tasksListSlice = createSlice({
     name: 'tasksList',
     initialState: [
     //Test use only 
-        /*{
+        {
             title: "title",
             description: "description",
             taskKey: "test25356",
@@ -25,7 +25,7 @@ export const tasksListSlice = createSlice({
                 //tagName: "tag",
                 //tagColor: "#f00"
             }
-        }*/
+        }
     ],
     reducers: {
         addTask: (state, action) => {

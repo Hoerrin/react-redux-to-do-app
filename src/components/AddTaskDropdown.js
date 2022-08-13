@@ -7,6 +7,9 @@ function AddTaskDropdown(props) {
   const tags = useSelector((state) => state.tagsList)
   const dispatch = useDispatch()
 
+  const TITLE_MAX_LENGTH = 85;
+  const DESCRIPTION_MAX_LENGTH = 300;
+
   //Dropdown state
   const [dropdownState, setDropdownState] = useState({});
 
@@ -47,8 +50,8 @@ function AddTaskDropdown(props) {
 
   return (
     <form className='addTaskDropdown addTaskDropdown--hidden' onSubmit={handleAddTask}>
-      <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required className='addTaskDropdown__input' maxLength={85} value={dropdownState.taskTitle || ''} name='taskTitle' onChange={handleChange} /></label>
-      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={300} value={dropdownState.taskDescription || ''} name="taskDescription" onChange={handleChange} /></label>
+      <label className='addTaskDropdown__label' id='addTaskDropdown__addTaskInput'>Task name <input type="text" required className='addTaskDropdown__input' maxLength={TITLE_MAX_LENGTH} value={dropdownState.taskTitle || ''} name='taskTitle' onChange={handleChange} /></label>
+      <label className='addTaskDropdown__label'>Description <textarea type='textarea' placeholder='optional' className='addTaskDropdown__input addTaskDropdown__input--textarea' maxLength={DESCRIPTION_MAX_LENGTH} value={dropdownState.taskDescription || ''} name="taskDescription" onChange={handleChange} /></label>
       <label className='addTaskDropdown__label'>
         Tag
         <select className='addTaskDropdown__input addTaskDropdown__input--select' value={dropdownState.taskTag} name="taskTag" onChange={handleChange}>

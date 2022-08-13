@@ -16,6 +16,9 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
   const [editTitleInput, setEditTitleInput] = useState('');
   const [editDescrInput, setEditDescrInput] = useState('');
 
+  const TITLE_MAX_LENGTH = 85;
+  const DESCRIPTION_MAX_LENGTH = 300;
+
   const tagToTagItem = tag => {
     const { tagName, tagColor } = tag;
 
@@ -104,12 +107,12 @@ export const TaskItem = ({ title, description, taskKey, isCompleted, isEdited, t
             <input onChange={() => dispatch(completeTask(taskKey))} disabled type="checkbox" className="card__checkbox--input" checked={isCompleted} style={{ border: `2px ${tagColor} solid` }} />
           </div>
           <div className="card__content">
-            <input className="card__content--editTitle" required maxLength={150} value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
-            <textarea className="card__content--editDescription" maxLength={300} value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
+            <input className="card__content--input" required maxLength={TITLE_MAX_LENGTH} value={editTitleInput} onChange={(e) => setEditTitleInput(e.target.value)} />
+            <textarea className="card__content--input card__content--editDescription" maxLength={DESCRIPTION_MAX_LENGTH} value={editDescrInput} onChange={(e) => setEditDescrInput(e.target.value)} />
           </div>
           <div className="card__controls">
             <div className="card__tag">
-              <select name="taskTag" className='addTaskDropdown__input' value={editTagInput} onChange={(e) => setEditTagInput(e.target.value)}>
+              <select name="taskTag" className='card__content--input card__content--editTag' value={editTagInput} onChange={(e) => setEditTagInput(e.target.value)}>
                 <option key='noneOption' value={JSON.stringify({})}>None</option>
                 {tags.map(tagToTagItem)}
               </select>

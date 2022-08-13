@@ -4,7 +4,7 @@ export const tagsListSlice = createSlice({
     name: 'tagsList',
     initialState: [
         //Test use only
-        /*{
+        {
             tagKey: "tag1",
             tagName: "tag1",
             tagColor: "#f00"
@@ -13,7 +13,7 @@ export const tagsListSlice = createSlice({
             tagKey: "tag2",
             tagName: "tag2",
             tagColor: "#f0f"
-        }*/
+        }
     ],
     reducers: {
         addTag: (state, action) => {
