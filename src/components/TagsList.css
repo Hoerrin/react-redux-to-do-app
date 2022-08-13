@@ -30,6 +30,8 @@
     width: 3rem;
     border: none;
     outline: none;
+    height: 1.5rem;
+    padding-left: 0.5em;
 }
 
 .tagsList__button{
