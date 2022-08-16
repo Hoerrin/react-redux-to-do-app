@@ -33,10 +33,7 @@ Start app. Browser will open automatically.
 - Assign tasks to tags,
 - Filter tasks by tags,
 - Display completed tasks,
-
-
-
-
+- App state stored in browser local storage,
 
 ## Roadmap
 
