@@ -4,28 +4,28 @@ export const tasksListSlice = createSlice({
     name: 'tasksList',
     initialState: [
     //Test use only 
-        {
-            title: "title",
-            description: "description",
-            taskKey: "test25356",
-            isCompleted: false,
-            isEdited: false,
-            tag: {
-                //tagName: "tag",
-                //tagColor: "#f00"
-            }
-        },
-        {
-            title: "title2",
-            description: "description",
-            taskKey: "test25125",
-            isCompleted: true,
-            isEdited: false,
-            tag: {
-                //tagName: "tag",
-                //tagColor: "#f00"
-            }
-        }
+        // {
+        //     title: "title",
+        //     description: "description",
+        //     taskKey: "test25356",
+        //     isCompleted: false,
+        //     isEdited: false,
+        //     tag: {
+        //         //tagName: "tag",
+        //         //tagColor: "#f00"
+        //     }
+        // },
+        // {
+        //     title: "title2",
+        //     description: "description",
+        //     taskKey: "test25125",
+        //     isCompleted: true,
+        //     isEdited: false,
+        //     tag: {
+        //         //tagName: "tag",
+        //         //tagColor: "#f00"
+        //     }
+        // }
     ],
     reducers: {
         addTask: (state, action) => {
