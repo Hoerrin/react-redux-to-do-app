@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-redux-to-do-app/static/css/main.53b1c12e.chunk.css",
+    "main.js": "/react-redux-to-do-app/static/js/main.cb67131c.chunk.js",
+    "main.js.map": "/react-redux-to-do-app/static/js/main.cb67131c.chunk.js.map",
+    "runtime-main.js": "/react-redux-to-do-app/static/js/runtime-main.250dd490.js",
+    "runtime-main.js.map": "/react-redux-to-do-app/static/js/runtime-main.250dd490.js.map",
+    "static/js/2.b1f1f681.chunk.js": "/react-redux-to-do-app/static/js/2.b1f1f681.chunk.js",
+    "static/js/2.b1f1f681.chunk.js.map": "/react-redux-to-do-app/static/js/2.b1f1f681.chunk.js.map",
+    "index.html": "/react-redux-to-do-app/index.html",
+    "static/css/main.53b1c12e.chunk.css.map": "/react-redux-to-do-app/static/css/main.53b1c12e.chunk.css.map",
+    "static/js/2.b1f1f681.chunk.js.LICENSE.txt": "/react-redux-to-do-app/static/js/2.b1f1f681.chunk.js.LICENSE.txt",
+    "static/media/cancel.7a500079.svg": "/react-redux-to-do-app/static/media/cancel.7a500079.svg",
+    "static/media/check.30361ec1.svg": "/react-redux-to-do-app/static/media/check.30361ec1.svg",
+    "static/media/edit.ce836b0d.svg": "/react-redux-to-do-app/static/media/edit.ce836b0d.svg",
+    "static/media/trash.18159926.svg": "/react-redux-to-do-app/static/media/trash.18159926.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.250dd490.js",
+    "static/js/2.b1f1f681.chunk.js",
+    "static/css/main.53b1c12e.chunk.css",
+    "static/js/main.cb67131c.chunk.js"
+  ]
+}
